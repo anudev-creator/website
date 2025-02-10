@@ -1,3 +1,5 @@
+"use client"
+
 import Event_img from "@/public/image/Home_1/events 1.png";
 import Image from "next/image";
 import BTN_Arrow from "@/public/image/Home_1/BTN_Arrow.png";
@@ -8,10 +10,19 @@ import EventBg from "@/public/image/Home_1/EventBG.png";
 import Footer from "../Footer/Footer";
 import BlogSlider from "./blogSlider";
 
+
+function handleOn() {
+  document.getElementById("bodySec").style.display = "none";
+  document.getElementById("InputSec").style.display = "block";
+  console.log("Hello");
+  
+}
+
 export default function HomeBottom() {
   return (
     <div>
-      <div className="flex justify-center mt-24">
+      
+      <div className="scrollSettings animate-fade flex justify-center mt-24">
         <div className="w-[85%] rounded-3xl grid gap-16 grid-cols-2 bg-[#E1E1E1]">
           <Image src={Event_img} alt="N/A" />
           <div className="py-[60px] relative">
@@ -53,7 +64,7 @@ export default function HomeBottom() {
           src={EventSym}
           alt="N?A"
         />
-        <div className="w-[85%] ">
+        <div className="scrollSettings animate-fade_left w-[85%] ">
           <div className="text-white text-[2.2vw] mt-20 font-bold">
             Take the Next Step.{" "}
           </div>
@@ -62,7 +73,7 @@ export default function HomeBottom() {
             <br />
             and explore our specialized solutions.
           </div>
-          <button className="flex justify-center p-3 px-10 rounded-lg mt-6 items-center bg-white">
+          <button onClick={handleOn} className="flex justify-center p-3 px-10 rounded-lg mt-6 items-center bg-white">
             Get started
             <span className="ml-2">
               <Image src={BTN_Arrow} alt="N?A" />
@@ -71,7 +82,7 @@ export default function HomeBottom() {
         </div>
       </div>
       <div className="mt-52 flex justify-center">
-        <div className="w-[85%] ">
+        <div className="w-[85%] scrollSettings animate-fade">
           <div className="text-[2.5vw] mb-4">
             The Astraliva{" "}
             <span className="text-[#185BD8]">Security Library</span>
